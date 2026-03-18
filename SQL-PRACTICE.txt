@@ -1,0 +1,51 @@
+select * from employee;
+
+----------
+
+create table employee (
+id int PRIMARY KEY,
+name VARCHAR(50)
+
+) ;
+
+-----------
+
+create table customer(
+order_id INT,
+customer_id INT,
+FOREIGN KEY (customer_id) REFERENCES customer(id) 
+
+);
+
+----------
+1. What is the difference between WHERE and HAVING?
+
+SELECT department, COUNT(*)
+FROM employees
+WHERE salary>30000
+GROUP BY department
+HAVING COUNT(*) >5;
+
+----------
+6. Find 2nd highest salary
+
+SELECT MAX(salary)
+FROM Employees
+Where salary < (SELECT MAX(salary) FROM Employees);
+---------
+
+7. Find duplicate records
+SELECT name Count(*)
+FROM Employees
+GROUP BY name
+HAVING COUNT(*) >1;
+
+--------
+
+
+
+
+
+
+
+
